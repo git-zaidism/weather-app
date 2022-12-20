@@ -43,3 +43,39 @@ body {
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
 }
+
+.upper-data img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%
+}
+
+
+.weather-data {
+  position: relative;
+  Z-index: 1;
+  width: 100%;
+  height: 100%;
+  background-color: var(--shadow-dark);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.location {
+  color: var(--white);
+  text-align: center;
+  font-size: 1.2em;
+}
+
+.temperature {
+  color: var(--white);
+  font-size: 4em;
+  text-align: center;
+  font-weight: 900;
+}
+

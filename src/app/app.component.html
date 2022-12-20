@@ -1,12 +1,12 @@
 <div class="container">
 
   <div class="upper-data">
-    <img src="../assets/hot-1.jpg" *ngIf="14 > 15">
-    <img src="../assets/cold.jpg" *ngIf="14 <= 15">
+    <img src="../assets/hot-1.jpg" *ngIf="14 < 15">
+    <!--    <img src="../assets/cold-1.jpg" *ngIf="14 < 16">-->
 
     <div class="weather-data">
       <div class="location">Pune</div>
-      <div class="temperature">{{14.40 | number: '1.0-0'}}</div>
+      <div class="temperature">{{14.40 | number: '1.0-0'}}°C</div>
     </div>
   </div>
 
