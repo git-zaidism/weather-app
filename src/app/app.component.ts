@@ -11,7 +11,7 @@ export class AppComponent implements OnInit {
   constructor(private weatherService: WeatherService) {
   }
 
-  cityName: string = 'Pune'; //Initial city
+  cityName: string = 'Pune'; //initial city
   weatherData?: WeatherData;
   city: any;
 
