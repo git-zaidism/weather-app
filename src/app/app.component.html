@@ -1,18 +1,58 @@
-<div class="container">
+<div class="search">
+  <form #form="ngForm" (submit)="onSubmit()">
+    <input type="text" placeholder="Search city" name="city"
+           [(ngModel)]="cityName">
+  </form>
+</div>
 
+<div class="container" *ngIf="weatherData">
   <div class="upper-data">
-    <img src="../assets/hot-1.jpg" *ngIf="14 < 15">
-    <!-- <img src="../assets/cold-1.jpg" *ngIf="14 < 16">-->
+    <img src="../assets/hot-1.jpg" *ngIf="weatherData.temp > 15">
+    <img src="../assets/cold-1.jpg" *ngIf="weatherData.temp <= 15">
 
     <div class="weather-data">
-      <div class="location">Pune</div>
-      <div class="temperature">{{14.40 | number: '1.0-0'}}°C</div>
+      <div class="location">{{city}}</div>
+      <div class="temperature">{{weatherData.temp | number: '1.0-0'}}°C</div>
     </div>
   </div>
 
   <div class="lower-data">
-  </div>
+    <div class="more-info-label"> More Information</div>
+    <div class="more-info-container">
+      <div class="info-block">
+        <div class="info-block-label">
+          <img class="min-temp-img" src="../assets/min.png">
+          <span>min</span>
+        </div>
+        <div class="info-block-value">{{weatherData.min_temp}}°C</div>
+      </div>
 
+      <div class="info-block">
+        <div class="info-block-label">
+          <img class="min-temp-img" src="../assets/max.png">
+          <span>max</span>
+        </div>
+        <div class="info-block-value">{{weatherData.max_temp}}°C</div>
+      </div>
+
+      <div class="info-block">
+        <div class="info-block-label">
+          <img class="min-temp-img" src="../assets/humid.png">
+          <span>humid</span>
+        </div>
+        <div class="info-block-value">{{weatherData.humidity}}%</div>
+      </div>
+
+      <div class="info-block">
+        <div class="info-block-label">
+          <img class="min-temp-img" src="../assets/wind.png">
+          <span>wind</span>
+        </div>
+        <div class="info-block-value">{{weatherData.wind_speed}} Km/h</div>
+      </div>
+
+    </div>
+  </div>
 </div>
 
 <router-outlet></router-outlet>
