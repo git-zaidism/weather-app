@@ -13,10 +13,11 @@ export class AppComponent implements OnInit {
 
   cityName: string = 'Pune';
   weatherData?: WeatherData;
-  city:any;
+  city: any;
 
   ngOnInit() {
     this.getWeatherData(this.cityName);
+    this.cityName = ''
   };
 
   onSubmit() {
@@ -30,7 +31,7 @@ export class AppComponent implements OnInit {
       next: (response) => {
         this.weatherData = response
       }
-    })
+    });
   }
 
 
